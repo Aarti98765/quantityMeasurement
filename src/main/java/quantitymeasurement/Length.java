@@ -3,12 +3,21 @@ package quantitymeasurement;
 import java.util.Objects;
 
  public class Length {
+    private final double FEET_TO_INCH = 12.0;
     private final double value;
     private final Unit unit;
 
     enum Unit{
         FEET, INCH
     };
+
+     public boolean compare(Length that) {
+         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+             return Double.compare(this.value,that.value) == 0;
+         if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+             return Double.compare(this.value*FEET_TO_INCH,that.value) == 0;
+         return false;
+     }
 
     public Length(Unit unit, double value) {
         this.unit = unit;

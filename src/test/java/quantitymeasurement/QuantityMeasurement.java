@@ -62,4 +62,12 @@ public class QuantityMeasurement {
         Length inch = new Length(Length.Unit.INCH,0.0);
         Assert.assertNotEquals(inch,2.1f);
     }
+
+    @Test
+    public void given0Feet0Inch_shouldReturnEqual() {
+        Length feet = new Length(Length.Unit.FEET,0.0);
+        Length inch = new Length(Length.Unit.INCH,0.0);
+        boolean compareCheck = feet.compare(inch);
+        Assert.assertTrue(compareCheck);
+    }
 }
