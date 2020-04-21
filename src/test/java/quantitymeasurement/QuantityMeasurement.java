@@ -70,4 +70,20 @@ public class QuantityMeasurement {
         boolean compareCheck = feet.compare(inch);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1Feet1Inch_shouldReturnFalse() {
+        Length feet = new Length(Length.Unit.FEET,1.0);
+        Length inch = new Length(Length.Unit.INCH,1.0);
+        boolean compareCheck = feet.compare(inch);
+        Assert.assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given1Feet12Inch_shouldReturnTrue() {
+        Length feet = new Length(Length.Unit.FEET,1.0);
+        Length inch = new Length(Length.Unit.INCH,12.0);
+        boolean compareCheck = feet.compare(inch);
+        Assert.assertTrue(compareCheck);
+    }
 }
