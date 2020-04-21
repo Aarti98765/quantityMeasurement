@@ -6,19 +6,20 @@ import java.util.Objects;
     private final double value;
     private final Unit unit;
 
-    enum Unit{FEET, INCH};
+    enum Unit{
+        FEET, INCH
+    };
+
     public Length(Unit unit, double value) {
         this.unit = unit;
         this.value = value;
     }
 
-     @Override
+    @Override
      public boolean equals(Object o) {
          if (this == o) return true;
          if (o == null || getClass() != o.getClass()) return false;
          Length length = (Length) o;
-         return Double.compare(length.value, value) == 0 &&
-                 unit == length.unit;
+         return Double.compare(length.value, value) == 0 && unit == length.unit;
      }
-
  }
