@@ -24,10 +24,10 @@ public class QuantityMeasurement {
         Inch inch2 = new Inch(1.0);
     }
 
-   // @Test
-    //public void given0InchAnd1Inch_shouldReturnNotEqual() {
-      //  Inch inch1 = new Inch(0.0);
-        //Inch inch2 = new Inch(1.0);
-        //Assert.assertNotEquals(inch1,inch2);
-   // }
+   @Test
+    public void given0InchAnd1Inch_shouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(1.0);
+        Assert.assertNotEquals(inch1,inch2);
+    }
 }
