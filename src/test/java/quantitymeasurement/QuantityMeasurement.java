@@ -50,4 +50,10 @@ public class QuantityMeasurement {
         Length inch = new Length(Length.Unit.INCH,1.0);
         Assert.assertNotEquals(inch, null);
     }
+
+    @Test
+    public void givenIntValueAnd1Feet_shouldReturnNotEqual() {
+        Length feet = new Length(Length.Unit.FEET,1.0);
+        Assert.assertNotEquals(feet,10);
+    }
 }
