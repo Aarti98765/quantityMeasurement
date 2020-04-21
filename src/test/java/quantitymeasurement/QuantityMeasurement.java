@@ -86,4 +86,12 @@ public class QuantityMeasurement {
         boolean compareCheck = feet.compare(inch);
         Assert.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1Feet1Feet_whenCompared_shouldReturnEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET,1.0);
+        Length feet2 = new Length(Length.Unit.FEET,1.0);
+        boolean compareCheck = feet1.compare(feet2);
+        Assert.assertTrue(compareCheck);
+    }
 }
