@@ -150,4 +150,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenYardAndFeet_when1YardEqualsTo3Feet_returnTrue() {
+        Length value1 = new Length(Unit.YARD, 1.0);
+        Length value2 = new Length(Unit.FEET, 3.0);
+        boolean isEqual = Unit.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
