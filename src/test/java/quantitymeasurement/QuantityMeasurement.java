@@ -142,4 +142,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenInchAndYard_when36InchEqualsTo1Yard_returnTrue() {
+        Length value1 = new Length(Unit.INCH, 36.0);
+        Length value2 = new Length(Unit.YARD, 1.0);
+        boolean isEqual = Unit.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
