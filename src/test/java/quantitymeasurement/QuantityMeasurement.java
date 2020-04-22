@@ -158,4 +158,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenInchAndCentimetre_when2InchEqualsTo5Centimetre_returnTrue() {
+        Length value1 = new Length(Unit.INCH, 2.0);
+        Length value2 = new Length(Unit.CENTIMETRE, 5.0);
+        boolean isEqual = Unit.compare(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
