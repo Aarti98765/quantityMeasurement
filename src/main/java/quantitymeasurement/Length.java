@@ -4,6 +4,7 @@ import java.util.Objects;
 
  public class Length {
     private final double FEET_TO_INCH = 12.0;
+    private final double INCH_TO_FEET = 12.0;
     private final double value;
     private final Unit unit;
 
@@ -16,6 +17,8 @@ import java.util.Objects;
              return Double.compare(this.value,that.value) == 0;
          if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
              return Double.compare(this.value*FEET_TO_INCH,that.value) == 0;
+         if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
+             return Double.compare(this.value/INCH_TO_FEET,that.value) == 0;
          return false;
      }
 
