@@ -112,7 +112,7 @@ public class QuantityMeasurement {
     }
 
     @Test
-    public void givenFeetAndYard_When3FeetEqualsToYard_ReturnTrue() {
+    public void givenFeetAndYard_when3FeetEqualsToYard_returnTrue() {
         Length value1 = new Length(Unit.FEET, 3.0);
         Length value2 = new Length(Unit.YARD, 1.0);
         boolean isEqual = Unit.compare(value1, value2);
@@ -120,8 +120,16 @@ public class QuantityMeasurement {
     }
 
     @Test
-    public void givenFeetAndYard_When1FeetNotEqualsTo1Yard_ReturnFalse() {
+    public void givenFeetAndYard_when1FeetNotEqualsTo1Yard_returnFalse() {
         Length value1 = new Length(Unit.FEET, 1.0);
+        Length value2 = new Length(Unit.YARD, 1.0);
+        boolean isEqual = Unit.compare(value1, value2);
+        Assert.assertFalse(isEqual);
+    }
+
+    @Test
+    public void givenInchAndYard_when1InchNotEqualsTo1Yard_returnFalse() {
+        Length value1 = new Length(Unit.INCH, 1.0);
         Length value2 = new Length(Unit.YARD, 1.0);
         boolean isEqual = Unit.compare(value1, value2);
         Assert.assertFalse(isEqual);
