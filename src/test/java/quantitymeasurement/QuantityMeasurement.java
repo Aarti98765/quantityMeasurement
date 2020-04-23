@@ -222,4 +222,12 @@ public class QuantityMeasurement {
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(7.56, addition, 0.0);
     }
+
+    @Test
+    public void givenLitreAndMillilitre_when1LitreAddedTo1000Millilitre_returnEqual() {
+        Length value1 = new Length(Unit.LITRE, 1.0);
+        Length value2 = new Length(Unit.MILLILITRE, 1000);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(2.0, addition, 0.0);
+    }
 }
