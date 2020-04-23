@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantitymeasurement.QuantityMeasurement" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T11:25:03" hostname="aarti" time="0.002">
+<testsuite name="quantitymeasurement.QuantityMeasurement" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T11:30:44" hostname="aarti" time="0.005">
   <properties/>
-  <testcase name="givenKilogramsAndGrams_when1KilogramsEqualsTo1000Grams_returnTrue" classname="quantitymeasurement.QuantityMeasurement" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="givenTonneAndKilogram_when1TonneEqualsTo1000Kilograms_returnTrue" classname="quantitymeasurement.QuantityMeasurement" time="0.005"/>
+  <system-out><![CDATA[1000.0
+1000.0
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

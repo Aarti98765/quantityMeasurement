@@ -4,7 +4,8 @@ public enum Unit {
 
     FEET(12.0), INCH(1), YARD(36),
     CENTIMETRE(0.4) , GALLON(3.78), LITRE(1),
-    MILLILITRE(0.001), KILOGRAMS(1), GRAMS(0.001);
+    MILLILITRE(0.001), KILOGRAMS(1), GRAMS(0.001),
+    TONNE(1000);
 
     private final double baseUnitConversion;
 
@@ -13,6 +14,8 @@ public enum Unit {
     }
 
     public static boolean unitConversion(Length lengthValue1, Length lengthValue2) {
+        System.out.println(lengthValue1.value * lengthValue1.unit.baseUnitConversion);
+        System.out.println(lengthValue2.value * lengthValue2.unit.baseUnitConversion);
         return Double.compare(lengthValue1.value * lengthValue1.unit.baseUnitConversion,
                 lengthValue2.value * lengthValue2.unit.baseUnitConversion) == 0;
     }

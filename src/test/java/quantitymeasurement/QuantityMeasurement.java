@@ -239,5 +239,15 @@ public class QuantityMeasurement {
         Assert.assertTrue(isEqual);
     }
 
+    @Test
+    public void givenTonneAndKilogram_when1TonneEqualsTo1000Kilograms_returnTrue() {
+        Length value1 = new Length(Unit.TONNE, 1.0);
+        Length value2 = new Length(Unit.KILOGRAMS, 1000);
+        boolean isEqual = Unit.unitConversion(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
+
+
+
 
 }
