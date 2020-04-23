@@ -214,4 +214,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenGallonAndLitre_when1GallonAddedTo3Litre_returnEqual() {
+        Length value1 = new Length(Unit.GALLON, 1.0);
+        Length value2 = new Length(Unit.LITRE, 3.78);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(7.56, addition, 0.0);
+    }
 }
