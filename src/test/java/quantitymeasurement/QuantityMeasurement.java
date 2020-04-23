@@ -190,4 +190,12 @@ public class QuantityMeasurement {
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(24.0, addition, 0.0);
     }
+
+    @Test
+    public void givenInchAndCentimetre_when2InchAddedTo2Centimeter_returnEqual() {
+        Length value1 = new Length(Unit.INCH, 2.0);
+        Length value2 = new Length(Unit.CENTIMETRE, 2.5);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(3.0, addition, 0.0);
+    }
 }
