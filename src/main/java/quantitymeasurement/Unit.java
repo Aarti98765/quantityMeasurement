@@ -14,8 +14,6 @@ public enum Unit {
     }
 
     public static boolean unitConversion(Length lengthValue1, Length lengthValue2) {
-        System.out.println(lengthValue1.value * lengthValue1.unit.baseUnitConversion);
-        System.out.println(lengthValue2.value * lengthValue2.unit.baseUnitConversion);
         return Double.compare(lengthValue1.value * lengthValue1.unit.baseUnitConversion,
                 lengthValue2.value * lengthValue2.unit.baseUnitConversion) == 0;
     }

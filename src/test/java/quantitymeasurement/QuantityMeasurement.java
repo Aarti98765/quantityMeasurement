@@ -247,7 +247,11 @@ public class QuantityMeasurement {
         Assert.assertTrue(isEqual);
     }
 
-
-
-
+    @Test
+    public void givenTonneAndGram_when1TonneAddedTo1000Grams_returnEqual() {
+        Length value1 = new Length(Unit.TONNE, 1.0);
+        Length value2 = new Length(Unit.GRAMS, 1000);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(1001, addition, 0.0);
+    }
 }
