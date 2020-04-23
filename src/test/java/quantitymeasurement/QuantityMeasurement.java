@@ -12,7 +12,7 @@ public class QuantityMeasurement {
     }
 
     @Test
-    public void given0FeetAnd1Feet_shouldReturnNotEqual() {
+    public void given0FeetAnd1Feet_whenCheckedReferences_shouldReturnNotEqual() {
         Length feet1 = new Length(Unit.FEET, 0.0);
         Length feet2 = new Length(Unit.FEET, 1.0);
         Assert.assertNotEquals(feet1, feet2);
@@ -33,7 +33,7 @@ public class QuantityMeasurement {
     }
 
     @Test
-    public void given1Feet1Inch_shouldReturnNotEqual() {
+    public void given1Feet1Inch_whenCheckedType_shouldReturnNotEqual() {
         Length feet = new Length(Unit.FEET, 1.0);
         Length inch = new Length(Unit.INCH, 1.0);
         Assert.assertNotEquals(feet, inch);
@@ -67,7 +67,7 @@ public class QuantityMeasurement {
     public void given0Feet0Inch_shouldReturnEqual() {
         Length feet = new Length(Unit.FEET,0.0);
         Length inch = new Length(Unit.INCH,0.0);
-        boolean compareCheck = Unit.compare(feet, inch);
+        boolean compareCheck = Unit.unitConversion(feet, inch);
         Assert.assertTrue(compareCheck);
     }
 
@@ -75,7 +75,7 @@ public class QuantityMeasurement {
     public void given1Feet1Inch_shouldReturnFalse() {
         Length feet = new Length(Unit.FEET,1.0);
         Length inch = new Length(Unit.INCH,1.0);
-        boolean compareCheck = Unit.compare(feet, inch);
+        boolean compareCheck = Unit.unitConversion(feet, inch);
         Assert.assertFalse(compareCheck);
     }
 
@@ -83,7 +83,7 @@ public class QuantityMeasurement {
     public void given1Feet1Feet_whenCompared_shouldReturnEqualLength() {
         Length feet1 = new Length(Unit.FEET,1.0);
         Length feet2 = new Length(Unit.FEET,1.0);
-        boolean compareCheck = Unit.compare(feet1, feet2);
+        boolean compareCheck = Unit.unitConversion(feet1, feet2);
         Assert.assertTrue(compareCheck);
     }
 
@@ -91,7 +91,7 @@ public class QuantityMeasurement {
     public void given1Feet1Inch_whenCompared_shouldReturnFalse() {
         Length feet = new Length(Unit.FEET,1.0);
         Length inch = new Length(Unit.INCH,1.0);
-        boolean compareCheck = Unit.compare(feet, inch);
+        boolean compareCheck = Unit.unitConversion(feet, inch);
         Assert.assertFalse(compareCheck);
     }
 
@@ -99,7 +99,7 @@ public class QuantityMeasurement {
     public void given1Feet12Inch_whenCompared_shouldReturnTrue() {
         Length feet = new Length(Unit.FEET,1.0);
         Length inch = new Length(Unit.INCH,12.0);
-        boolean compareCheck = Unit.compare(feet, inch);
+        boolean compareCheck = Unit.unitConversion(feet, inch);
         Assert.assertTrue(compareCheck);
     }
 
@@ -107,7 +107,7 @@ public class QuantityMeasurement {
     public void given12Inch1Feet_whenCompared_shouldReturnTrue() {
         Length inch = new Length(Unit.INCH,12.0);
         Length feet = new Length(Unit.FEET,1.0);
-        boolean compareCheck = Unit.compare(inch, feet);
+        boolean compareCheck = Unit.unitConversion(inch, feet);
         Assert.assertTrue(compareCheck);
     }
 
@@ -115,7 +115,7 @@ public class QuantityMeasurement {
     public void givenFeetAndYard_when3FeetEqualsToYard_returnTrue() {
         Length value1 = new Length(Unit.FEET, 3.0);
         Length value2 = new Length(Unit.YARD, 1.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -123,7 +123,7 @@ public class QuantityMeasurement {
     public void givenFeetAndYard_when1FeetNotEqualsTo1Yard_returnFalse() {
         Length value1 = new Length(Unit.FEET, 1.0);
         Length value2 = new Length(Unit.YARD, 1.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertFalse(isEqual);
     }
 
@@ -131,7 +131,7 @@ public class QuantityMeasurement {
     public void givenInchAndYard_when1InchNotEqualsTo1Yard_returnFalse() {
         Length value1 = new Length(Unit.INCH, 1.0);
         Length value2 = new Length(Unit.YARD, 1.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertFalse(isEqual);
     }
 
@@ -139,7 +139,7 @@ public class QuantityMeasurement {
     public void givenYardAndInch_when1YardEqualsTo36Inch_returnTrue() {
         Length value1 = new Length(Unit.YARD, 1.0);
         Length value2 = new Length(Unit.INCH, 36.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -147,7 +147,7 @@ public class QuantityMeasurement {
     public void givenInchAndYard_when36InchEqualsTo1Yard_returnTrue() {
         Length value1 = new Length(Unit.INCH, 36.0);
         Length value2 = new Length(Unit.YARD, 1.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -155,7 +155,7 @@ public class QuantityMeasurement {
     public void givenYardAndFeet_when1YardEqualsTo3Feet_returnTrue() {
         Length value1 = new Length(Unit.YARD, 1.0);
         Length value2 = new Length(Unit.FEET, 3.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -163,7 +163,7 @@ public class QuantityMeasurement {
     public void givenInchAndCentimetre_when2InchEqualsTo5Centimetre_returnTrue() {
         Length value1 = new Length(Unit.INCH, 2.0);
         Length value2 = new Length(Unit.CENTIMETRE, 5.0);
-        boolean isEqual = Unit.compare(value1, value2);
+        boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
 
@@ -197,5 +197,13 @@ public class QuantityMeasurement {
         Length value2 = new Length(Unit.CENTIMETRE, 2.5);
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(3.0, addition, 0.0);
+    }
+
+    @Test
+    public void givenGallonAndLitre_when1GallonEqualsTo3Liter_returnTrue() {
+        Length value1 = new Length(Unit.GALLON, 1.0);
+        Length value2 = new Length(Unit.LITRE, 3.78);
+        boolean isEqual = Unit.unitConversion(value1, value2);
+        Assert.assertTrue(isEqual);
     }
 }

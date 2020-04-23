@@ -3,7 +3,8 @@ package quantitymeasurement;
 public enum Unit {
 
     FEET(12.0), INCH(1), YARD(36),
-    CENTIMETRE(0.4);
+    CENTIMETRE(0.4) , GALLON(3.78), LITRE(1),
+    MILLILITRE(0.001);
 
     private final double baseUnitConversion;
 
@@ -11,7 +12,7 @@ public enum Unit {
         this.baseUnitConversion = baseUnitConversion;
     }
 
-    public static boolean compare(Length lengthValue1, Length lengthValue2) {
+    public static boolean unitConversion(Length lengthValue1, Length lengthValue2) {
         return Double.compare(lengthValue1.value * lengthValue1.unit.baseUnitConversion,
                 lengthValue2.value * lengthValue2.unit.baseUnitConversion) == 0;
     }
