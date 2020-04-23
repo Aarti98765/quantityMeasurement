@@ -254,4 +254,12 @@ public class QuantityMeasurement {
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(1001, addition, 0.0);
     }
+
+    @Test
+    public void givenFahrenheitAndCelsius_when212FahrenheitEqualsTo100Celsius_returnTrue() {
+        Length value1 = new Length(Unit.FAHRENHEIT, 212);
+        Length value2 = new Length(Unit.CELSIUS, 100);
+        boolean isEqual = Unit.unitConversion(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
