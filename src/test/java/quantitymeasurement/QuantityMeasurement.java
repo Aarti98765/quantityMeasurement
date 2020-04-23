@@ -166,4 +166,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.compare(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenInchAndInch_when2InchAddedTo2Inch_returnEqual() {
+        Length value1 = new Length(Unit.INCH, 2.0);
+        Length value2 = new Length(Unit.INCH, 2.0);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(4.0, addition, 0.0);
+    }
 }

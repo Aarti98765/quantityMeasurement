@@ -11,8 +11,13 @@ public enum Unit {
         this.baseUnitConversion = baseUnitConversion;
     }
 
-    public static boolean compare(Length l1, Length l2) {
-        return Double.compare(l1.value * l1.unit.baseUnitConversion,
-                l2.value * l2.unit.baseUnitConversion) == 0;
+    public static boolean compare(Length lengthValue1, Length lengthValue2) {
+        return Double.compare(lengthValue1.value * lengthValue1.unit.baseUnitConversion,
+                lengthValue2.value * lengthValue2.unit.baseUnitConversion) == 0;
+    }
+
+    public static double add(Length lengthValue1, Length lengthValue2) {
+        return lengthValue1.value * lengthValue1.unit.baseUnitConversion +
+                lengthValue2.value * lengthValue2.unit.baseUnitConversion;
     }
 }
