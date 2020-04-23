@@ -230,4 +230,14 @@ public class QuantityMeasurement {
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(2.0, addition, 0.0);
     }
+
+    @Test
+    public void givenKilogramsAndGrams_when1KilogramsEqualsTo1000Grams_returnTrue() {
+        Length value1 = new Length(Unit.KILOGRAMS, 1.0);
+        Length value2 = new Length(Unit.GRAMS, 1000);
+        boolean isEqual = Unit.unitConversion(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
+
+
 }

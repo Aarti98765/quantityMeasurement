@@ -4,7 +4,7 @@ public enum Unit {
 
     FEET(12.0), INCH(1), YARD(36),
     CENTIMETRE(0.4) , GALLON(3.78), LITRE(1),
-    MILLILITRE(0.001);
+    MILLILITRE(0.001), KILOGRAMS(1), GRAMS(0.001);
 
     private final double baseUnitConversion;
 
