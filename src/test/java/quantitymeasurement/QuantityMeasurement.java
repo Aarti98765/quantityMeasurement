@@ -182,4 +182,12 @@ public class QuantityMeasurement {
         double addition = Unit.add(value1, value2);
         Assert.assertEquals(14.0, addition, 0.0);
     }
+
+    @Test
+    public void givenFeetAndFeet_when1FeetAddedTo1Feet_returnEqual() {
+        Length value1 = new Length(Unit.FEET, 1.0);
+        Length value2 = new Length(Unit.FEET, 1.0);
+        double addition = Unit.add(value1, value2);
+        Assert.assertEquals(24.0, addition, 0.0);
+    }
 }
