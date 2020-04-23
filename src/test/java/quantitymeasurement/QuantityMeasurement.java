@@ -206,4 +206,12 @@ public class QuantityMeasurement {
         boolean isEqual = Unit.unitConversion(value1, value2);
         Assert.assertTrue(isEqual);
     }
+
+    @Test
+    public void givenLitreAndMillilitre_when1LitreEqualsTo1000Millilitre_returnTrue() {
+        Length value1 = new Length(Unit.LITRE, 1.0);
+        Length value2 = new Length(Unit.MILLILITRE, 1000);
+        boolean isEqual = Unit.unitConversion(value1, value2);
+        Assert.assertTrue(isEqual);
+    }
 }
