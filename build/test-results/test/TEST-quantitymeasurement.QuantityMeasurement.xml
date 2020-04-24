@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantitymeasurement.QuantityMeasurement" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-23T11:51:48" hostname="aarti" time="0.002">
-  <properties/>
-  <testcase name="givenFahrenheitAndCelsius_when212FahrenheitEqualsTo100Celsius_returnTrue" classname="quantitymeasurement.QuantityMeasurement" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
